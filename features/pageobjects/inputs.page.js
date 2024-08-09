@@ -1,14 +1,20 @@
-class DropdownPage {
+class InputsPage {
   get elements() {
     return {
-      header: () => $("h3"),
-      input: () => $("/html/body/div[2]/div/div/div/div/input"),
+      inputField: () => $('.example input[type="number"]')
     };
   }
 
-  async set(value) {
-    await (await this.elements.input()).setValue(value);
+  // Method to set a value to the input field
+  async setInputValue(value) {
+    const inputField = await this.elements.inputField();
+    await inputField.setValue(value);
+  }
+
+  // Method to get the value of the input field
+  async getInputValue() {
+    return await (await this.elements.inputField()).getValue();
   }
 }
 
-export default new DropdownPage();
+export default new InputsPage();

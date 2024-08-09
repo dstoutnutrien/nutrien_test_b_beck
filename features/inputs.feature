@@ -4,7 +4,7 @@ Feature: The Internet Guinea Pig Website
   Scenario Outline: As a user, I can change the value of an input
     Given I am on the inputs page
     When I enter "<num>"
-    Then The input value should be the number I entered
+    Then The input value should be the "<num>" I entered
 
     Examples:
       | num |
