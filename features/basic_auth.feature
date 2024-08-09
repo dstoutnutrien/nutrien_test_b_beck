@@ -9,3 +9,4 @@ Feature: The Internet Guinea Pig Website
       | username | password | message                                                |
       | admin    | admin    | Congratulations! You must have the proper credentials. |
       | foo      | bar      | not authorized                                         |
+

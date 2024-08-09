@@ -1,10 +1,14 @@
 class DropdownPage {
   get elements() {
     return {
-      header: () => $("h3"),
-      dropdown: () => $("select#dropdown"),
-      selectedOption: () => $('option[selected="selected"]'),
+     // header: () => $("h3"),
+      dropdown: () => $("#dropdown"),
+      selectedOption: () => $('#dropdown option:checked'),
     };
+  }
+// Method to get the text of the selected option
+  async getSelectedOptionText() {
+    return await (await this.elements.selectedOption()).getText();
   }
 
   async select(option) {
